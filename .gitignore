@@ -1,0 +1,8 @@
+.idea/*
+aws-url-shortener/*
+aws-url-shortener.zip
+lambda_functions/*
+shortener.tf
+terraform.tfstate
+terraform.tfstate.backup
+.terraform/*
