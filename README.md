@@ -1,4 +1,4 @@
-#koroche.link AWS link shortener service
+# koroche.link AWS link shortener service
 
 Author: trukhinyuri <yuri@trukhin.com>
 
