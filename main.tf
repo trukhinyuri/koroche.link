@@ -1,41 +1,4 @@
 
-
-resource "aws_key_pair" "deployer_public_key" {
-  provider = "aws.aws_provider_eu_west_Ireland"
-  key_name   = "deployer-key"
-  public_key = "${var.public_ssh_key}"
-}
-
-resource "aws_ecr_repository" "container_storage_eu_west_Ireland" {
-  provider = "aws.aws_provider_eu_west_Ireland"
-  name = "container_storage_eu_west_ireland"
-}
-
-resource "aws_ecr_repository" "container_storage_us_west_NCalifornia" {
-  provider = "aws.aws_provider_us_west_NCalifornia"
-  name = "container_storage_us_west_ncalifornia"
-}
-
-resource "aws_ecr_repository" "container_storage_eu_central_Frankfurt" {
-  provider = "aws.aws_provider_eu_central_Frankfurt"
-  name = "container_storage_eu_central_frankfurt"
-}
-
-
-
-//resource "aws_instance" "container_builder" {
-//  provider = "aws.aws_provider_eu_west_Ireland"
-//  ami = "ami-00035f41c82244dab"
-//  instance_type = "t2.nano"
-//  private_ip = "10.0.0.12"
-//  key_name = "${aws_key_pair.deployer_public_key.key_name}"
-//  subnet_id = "${aws_subnet.subnet_Ireland.id}"
-//}
-
-
-
-
-
 //resource "aws_s3_bucket" "storage_bucket" {
 //  bucket = "${var.shortener_domain}"
 //  acl    = "public-read"

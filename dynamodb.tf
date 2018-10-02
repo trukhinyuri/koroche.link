@@ -1,10 +1,10 @@
 resource "aws_dynamodb_table" "dynamodb_table_Ireland" {
   provider = "aws.aws_provider_eu_west_Ireland"
   "attribute" {
-    name = "myAttribute"
+    name = "slug"
     type = "S"
   }
-  hash_key = "myAttribute"
+  hash_key = "slug"
   name = "url_shortener"
   read_capacity = 1
   write_capacity = 1
@@ -15,10 +15,10 @@ resource "aws_dynamodb_table" "dynamodb_table_Ireland" {
 resource "aws_dynamodb_table" "dynamodb_table_NCalifornia" {
   provider = "aws.aws_provider_us_west_NCalifornia"
   "attribute" {
-    name = "myAttribute"
+    name = "slug"
     type = "S"
   }
-  hash_key = "myAttribute"
+  hash_key = "slug"
   name = "url_shortener"
   read_capacity = 1
   write_capacity = 1

@@ -203,7 +203,7 @@ func NewSessionAWS(region string, endpoint string) *session.Session {
 	return session.Must(session.NewSession(&aws.Config{
 		Region:   aws.String(region),
 		Endpoint: aws.String(endpoint),
-		//CredentialsChainVerboseErrors: aws.Bool(true),
+		CredentialsChainVerboseErrors: aws.Bool(true),
 		//Endpoint: aws.String("https://dynamodb.eu-west-1.amazonaws.com"),
 		//LogLevel: aws.LogLevel(aws.LogDebugWithHTTPBody),
 	}))
