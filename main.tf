@@ -1,3 +1,5 @@
+
+
 resource "aws_key_pair" "deployer_public_key" {
   provider = "aws.aws_provider_eu_west_Ireland"
   key_name   = "deployer-key"
@@ -19,68 +21,17 @@ resource "aws_ecr_repository" "container_storage_eu_central_Frankfurt" {
   name = "container_storage_eu_central_frankfurt"
 }
 
-resource "aws_vpc" "vpc_Ireland" {
-  provider = "aws.aws_provider_eu_west_Ireland"
-  cidr_block = "10.0.0.0/16"
-  enable_dns_hostnames = true
-  tags {
-    Name = "vpc_Ireland"
-  }
-}
 
-resource "aws_internet_gateway" "gw_Ireland" {
-  provider = "aws.aws_provider_eu_west_Ireland"
-  vpc_id = "${aws_vpc.vpc_Ireland.id}"
-}
 
-resource "aws_subnet" "subnet_Ireland" {
-  provider = "aws.aws_provider_eu_west_Ireland"
-  vpc_id = "${aws_vpc.vpc_Ireland.id}"
-  cidr_block = "10.0.0.0/24"
-  map_public_ip_on_launch = true
+//resource "aws_instance" "container_builder" {
+//  provider = "aws.aws_provider_eu_west_Ireland"
+//  ami = "ami-00035f41c82244dab"
+//  instance_type = "t2.nano"
+//  private_ip = "10.0.0.12"
+//  key_name = "${aws_key_pair.deployer_public_key.key_name}"
+//  subnet_id = "${aws_subnet.subnet_Ireland.id}"
+//}
 
-//  availability_zone = "us-west-2a"
-  tags {
-    Name = "subnet_Ireland"
-  }
-
-  depends_on = ["aws_internet_gateway.gw_Ireland"]
-}
-
-resource "aws_instance" "container_builder" {
-  provider = "aws.aws_provider_eu_west_Ireland"
-  ami = "ami-00035f41c82244dab"
-  instance_type = "t2.nano"
-  private_ip = "10.0.0.12"
-  key_name = "${aws_key_pair.deployer_public_key.key_name}"
-  subnet_id = "${aws_subnet.subnet_Ireland.id}"
-}
-
-resource "aws_eip" "container_builder_eip" {
-  provider = "aws.aws_provider_eu_west_Ireland"
-  vpc = true
-  instance = "${aws_instance.container_builder.id}"
-  associate_with_private_ip = "10.0.0.12"
-  depends_on                = ["aws_internet_gateway.gw_Ireland"]
-}
-
-resource "aws_security_group" "access-all" {
-  provider = "aws.aws_provider_eu_west_Ireland"
-  name        = "access-all"
-  description = "Allow all inbound traffic"
-  vpc_id = "${aws_vpc.vpc_Ireland.id}"
-
-  ingress {
-    from_port   = 0
-    to_port     = 65535
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  tags {
-    Name = "allow_all"
-  }
-}
 
 
 
