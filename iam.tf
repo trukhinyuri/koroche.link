@@ -1,4 +1,4 @@
-resource "aws_iam_policy" "policy_DynamoDB_FullAccess" {
+resource "aws_iam_policy" "DynamoDB_FullAccess" {
   provider = "aws.aws_provider_eu_west_Ireland"
   name        = "DynamoDB_FullAccess"
   path        = "/"
@@ -49,6 +49,8 @@ resource "aws_iam_policy" "policy_DynamoDB_FullAccess" {
 EOF
 }
 
-resource "aws_iam_role" "role_ECS_tasks_Dynamo" {
-  assume_role_policy = ""
-}
+//resource "aws_iam_role" "iam_role_webApp_Ireland" {
+//  provider = "aws.aws_provider_eu_west_Ireland"
+//  name = "iam_role_webApp_Ireland"
+//  assume_role_policy = "DynamoDB_FullAccess"
+//}
