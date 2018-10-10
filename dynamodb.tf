@@ -26,16 +26,17 @@ resource "aws_dynamodb_table" "dynamodb_table_NCalifornia" {
   stream_view_type = "NEW_AND_OLD_IMAGES"
 }
 
-resource "aws_dynamodb_global_table" "dynamo_db_global_url_shortener" {
-  depends_on = ["aws_dynamodb_table.dynamodb_table_Ireland", "aws_dynamodb_table.dynamodb_table_NCalifornia"]
-  provider = "aws.aws_provider_eu_west_Ireland"
-  name = "url_shortener"
-
-  replica {
-    region_name = "${var.aws_region_us_west_NCalifornia}"
-  }
-
-  replica {
-    region_name = "${var.aws_region_eu_west_Ireland}"
-  }
-}
+//resource "aws_dynamodb_global_table" "dynamo_db_global_url_shortener" {
+//  depends_on = ["aws_dynamodb_table.dynamodb_table_Ireland", "aws_dynamodb_table.dynamodb_table_NCalifornia"]
+//  provider = "aws.aws_provider_eu_west_Ireland"
+//  name = "url_shortener"
+//
+//
+//  replica {
+//    region_name = "${var.aws_region_us_west_NCalifornia}"
+//  }
+//
+//  replica {
+//    region_name = "${var.aws_region_eu_west_Ireland}"
+//  }
+//}
