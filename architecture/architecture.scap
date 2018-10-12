@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ScappleDocument Version="1.1" ID="1DD8C075-3B37-459D-839B-5CC828B6E901">
+    <Notes>
+        <Note ID="1" FontSize="12.0" Position="1398.511719,140.152344" Width="87.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+            </Appearance>
+            <String>domain DNS A</String>
+            <ConnectedNoteIDs>2-3</ConnectedNoteIDs>
+            <PointsToNoteIDs>2-3, 5</PointsToNoteIDs>
+        </Note>
+        <Note ID="2" FontSize="12.0" Position="1167.511719,259.152344" Width="118.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+            </Appearance>
+            <String>Balancer with GeoIP</String>
+            <ConnectedNoteIDs>1, 3, 14-15</ConnectedNoteIDs>
+            <PointsToNoteIDs>3, 14-15</PointsToNoteIDs>
+        </Note>
+        <Note ID="3" FontSize="12.0" Position="1581.511719,262.152344" Width="118.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+            </Appearance>
+            <String>Balancer with GeoIP</String>
+            <ConnectedNoteIDs>1-2, 16-17</ConnectedNoteIDs>
+            <PointsToNoteIDs>2, 16-17</PointsToNoteIDs>
+        </Note>
+        <Note ID="9" FontSize="12.0" Position="1062.511719,214.152344" Width="57.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+            </Appearance>
+            <String>Region 1</String>
+        </Note>
+        <Note ID="11" FontSize="12.0" Position="1502.511719,217.152344" Width="57.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+            </Appearance>
+            <String>Region 2</String>
+        </Note>
+        <Note ID="13" FontSize="12.0" Position="1397.511719,605.152344" Width="85.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+            </Appearance>
+            <String>Region Arbiter</String>
+        </Note>
+        <Note ID="14" FontSize="12.0" Position="1107.511719,344.152344" Width="79.0">
+            <Appearance>
+                <Border Weight="1"></Border>
+            </Appearance>
+            <String>Frontend 1</String>
+            <ConnectedNoteIDs>2, 20</ConnectedNoteIDs>
+            <PointsToNoteIDs>20</PointsToNoteIDs>
+        </Note>
+        <Note ID="15" FontSize="12.0" Position="1214.511719,345.152344" Width="104.0">
+            <Appearance>
+                <Border Weight="1"></Border>
+            </Appearance>
+            <String>Возможность добавления фронтендов</String>
+            <ConnectedNoteIDs>2, 20</ConnectedNoteIDs>
+            <PointsToNoteIDs>20</PointsToNoteIDs>
+        </Note>
+        <Note ID="16" FontSize="12.0" Position="1557.511719,333.152344" Width="79.0">
+            <Appearance>
+                <Border Weight="1"></Border>
+            </Appearance>
+            <String>Frontend 1</String>
+            <ConnectedNoteIDs>3, 21</ConnectedNoteIDs>
+            <PointsToNoteIDs>21</PointsToNoteIDs>
+        </Note>
+        <Note ID="17" FontSize="12.0" Position="1664.511719,334.152344" Width="98.0">
+            <Appearance>
+                <Border Weight="1"></Border>
+            </Appearance>
+            <String>Возможность добавления фронтендов</String>
+            <ConnectedNoteIDs>3, 21</ConnectedNoteIDs>
+            <PointsToNoteIDs>21</PointsToNoteIDs>
+        </Note>
+        <Note ID="20" FontSize="12.0" Position="1137.511719,455.152344" Width="106.0">
+            <Appearance>
+                <Border Weight="1"></Border>
+            </Appearance>
+            <String>Backend-Mongo 1</String>
+            <ConnectedNoteIDs>14-15, 22</ConnectedNoteIDs>
+        </Note>
+        <Note ID="21" FontSize="12.0" Position="1588.511719,443.152344" Width="103.0">
+            <Appearance>
+                <Border Weight="1"></Border>
+            </Appearance>
+            <String>Backend-Mongo2</String>
+            <ConnectedNoteIDs>16-17, 22</ConnectedNoteIDs>
+        </Note>
+        <Note ID="22" FontSize="12.0" Position="1402.511719,664.152344" Width="87.0">
+            <Appearance>
+                <Border Weight="1"></Border>
+            </Appearance>
+            <String>Mongo–Arbiter</String>
+            <ConnectedNoteIDs>20-21</ConnectedNoteIDs>
+            <PointsToNoteIDs>20-21</PointsToNoteIDs>
+        </Note>
+        <Note ID="24" FontSize="12.0" Position="1102.511719,503.152344" Width="200.0">
+            <Appearance>
+                <Border Weight="1"></Border>
+            </Appearance>
+            <String>Возможность шардирования при необходимости масштабирования базы</String>
+        </Note>
+        <Note ID="26" FontSize="12.0" Position="1554.511719,502.152344" Width="200.0">
+            <Appearance>
+                <Border Weight="1"></Border>
+            </Appearance>
+            <String>Возможность шардирования при необходимости масштабирования базы</String>
+        </Note>
+        <Note ID="27" FontSize="12.0" Position="1316.511719,188.152344" Width="212.0">
+            <Appearance>
+                <Border Weight="1"></Border>
+            </Appearance>
+            <String>Возможность использования CDN</String>
+        </Note>
+        <Note ID="49" FontSize="12.0" Position="114.0,482.0" Width="95.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+            </Appearance>
+            <String>ECR Repository</String>
+            <ConnectedNoteIDs>50</ConnectedNoteIDs>
+        </Note>
+        <Note ID="50" FontSize="12.0" Position="60.0,287.0" Width="200.0">
+            <Appearance>
+                <Alignment>Left</Alignment>
+            </Appearance>
+            <String>container_builter_instance
+Раздеплоенные 
+docker, compose, git
+В идеале тут должен быть билд-сервер, который возьмет сорцы из гита, забилдит и положит в репозиторий образов.
+Пока сделаем это разово при деплое для помещения образа в репозиторий.</String>
+            <ConnectedNoteIDs>49</ConnectedNoteIDs>
+            <PointsToNoteIDs>49</PointsToNoteIDs>
+        </Note>
+    </Notes>
+    <BackgroundShapes>
+        <Shape ID="7" Sticky="No" Position="1063.511719,243.152344" Width="286.671875" Height="330.421875">
+            <Appearance>
+                <Border Weight="1"></Border>
+            </Appearance>
+        </Shape>
+        <Shape ID="10" Sticky="No" Position="1503.511719,245.152344" Width="286.671875" Height="331.042969">
+            <Appearance>
+                <Border Weight="1"></Border>
+            </Appearance>
+        </Shape>
+        <Shape ID="12" Sticky="No" Position="1379.511719,635.152344" Width="130.0" Height="63.0">
+            <Appearance>
+                <Border Weight="1"></Border>
+            </Appearance>
+        </Shape>
+    </BackgroundShapes>
+    <AutoFit>1-3, 9, 11, 13, 20-22, 49</AutoFit>
+    <NoteStyles>
+        <Style Name="Bubble (Blue)" ID="E963832B-8A5F-4948-933B-EABCBA3E0519" AffectFontStyle="No" AffectAlignment="No" AffectTextColor="No" AffectNoteBody="Yes" AffectFade="No">
+            <BorderThickness>1</BorderThickness>
+            <BorderColor>0.561855 0.71062 0.779401</BorderColor>
+            <FillColor>0.702319 0.888276 0.974252</FillColor>
+        </Style>
+        <Style Name="Bubble (Green)" ID="39B67831-4A5E-4035-B9A5-FE21158ECE0F" AffectFontStyle="No" AffectAlignment="No" AffectTextColor="No" AffectNoteBody="Yes" AffectFade="No">
+            <BorderThickness>1</BorderThickness>
+            <BorderColor>0.572684 0.758969 0.558154</BorderColor>
+            <FillColor>0.715855 0.948712 0.697692</FillColor>
+        </Style>
+        <Style Name="Bubble (Pink)" ID="D1CC07A8-DCC5-4BA4-ABAD-FADA4141106A" AffectFontStyle="No" AffectAlignment="No" AffectTextColor="No" AffectNoteBody="Yes" AffectFade="No">
+            <BorderThickness>1</BorderThickness>
+            <BorderColor>0.794796 0.560965 0.58607</BorderColor>
+            <FillColor>0.957566 0.766747 0.999616</FillColor>
+        </Style>
+        <Style Name="Bubble (Red)" ID="F1D31F9F-B535-4E4D-8BAB-0A5DC7956231" AffectFontStyle="No" AffectAlignment="No" AffectTextColor="No" AffectNoteBody="Yes" AffectFade="No">
+            <BorderThickness>1</BorderThickness>
+            <BorderColor>0.794796 0.560965 0.58607</BorderColor>
+            <FillColor>0.993495 0.701207 0.732587</FillColor>
+        </Style>
+        <Style Name="Bubble (Yellow)" ID="E8092897-4EC1-4DFA-ABDF-2FB4951E65BC" AffectFontStyle="No" AffectAlignment="No" AffectTextColor="No" AffectNoteBody="Yes" AffectFade="No">
+            <BorderThickness>1</BorderThickness>
+            <BorderColor>0.798177 0.714184 0.522055</BorderColor>
+            <FillColor>0.997722 0.89273 0.652569</FillColor>
+        </Style>
+        <Style Name="Red Text" ID="A42D6A15-09DF-4175-90D4-685BC40F1C62" AffectFontStyle="No" AffectAlignment="No" AffectTextColor="Yes" AffectNoteBody="No" AffectFade="No">
+            <TextColor>0.985948 0.0 0.026951</TextColor>
+        </Style>
+        <Style Name="Title Text" ID="5B3518B7-4B75-45CE-97E7-E2EDBAB8D139" AffectFontStyle="Yes" AffectAlignment="Yes" AffectTextColor="No" AffectNoteBody="No" AffectFade="No">
+            <FontSize>28.0</FontSize>
+            <IsBold>Yes</IsBold>
+        </Style>
+    </NoteStyles>
+    <UISettings>
+        <BackgroundColor>1.0 1.0 1.0</BackgroundColor>
+        <DefaultFont>Helvetica</DefaultFont>
+        <DefaultTextColor>0.0 0.0 0.0</DefaultTextColor>
+    </UISettings>
+    <PrintSettings PaperSize="595.0,842.0" LeftMargin="72.0" RightMargin="72.0" TopMargin="90.0" BottomMargin="90.0" PaperType="iso-a4" Orientation="Portrait" HorizontalPagination="Clip" VerticalPagination="Auto" ScaleFactor="1.0" HorizontallyCentered="Yes" VerticallyCentered="Yes" Collates="Yes" PagesAcross="1" PagesDown="1"></PrintSettings>
+</ScappleDocument>

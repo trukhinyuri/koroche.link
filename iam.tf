@@ -1,3 +1,21 @@
+data "aws_iam_policy_document" "ec2_instance_assume_role_policy" {
+  provider = "aws.aws_provider_eu_west_Ireland"
+  statement {
+    actions = ["sts:AssumeRole"]
+    principals {
+      identifiers = ["ec2.amazonaws.com"]
+      type = "Service"
+    }
+  }
+}
+
+resource "aws_iam_role" "ec2_instance_role" {
+  provider = "aws.aws_provider_eu_west_Ireland"
+  assume_role_policy = "${data.aws_iam_policy_document.ec2_instance_assume_role_policy.json}"
+  name = "ec2_instance_role_ireland"
+  path = "/"
+}
+
 resource "aws_iam_policy" "DynamoDB_FullAccess" {
   provider = "aws.aws_provider_eu_west_Ireland"
   name        = "DynamoDB_FullAccess"
@@ -49,8 +67,18 @@ resource "aws_iam_policy" "DynamoDB_FullAccess" {
 EOF
 }
 
-//resource "aws_iam_role" "iam_role_webApp_Ireland" {
-//  provider = "aws.aws_provider_eu_west_Ireland"
-//  name = "iam_role_webApp_Ireland"
-//  assume_role_policy = "DynamoDB_FullAccess"
-//}
+resource "aws_iam_role_policy_attachment" "apploDynamoDBAccessFromEC2" {
+  provider = "aws.aws_provider_eu_west_Ireland"
+  policy_arn = "${aws_iam_policy.DynamoDB_FullAccess.arn}"
+  role = "${aws_iam_role.ec2_instance_role.name}"
+}
+
+resource "aws_iam_instance_profile" "ecs-instance-profile-Ireland" {
+  provider = "aws.aws_provider_eu_west_Ireland"
+  name = "ecs-instance-profile-ireland"
+  path="/"
+  role = "${aws_iam_role.ec2_instance_role.id}"
+  provisioner "local-exec" {
+    command = "sleep 60"
+  }
+}
