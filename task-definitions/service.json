@@ -3,7 +3,7 @@
     "name": "app",
     "image": "trukhinyuri/golinkshortener",
     "cpu": 1,
-    "memory": 512,
+    "memory": 256,
     "essential": true,
     "portMappings": [
       {
@@ -16,7 +16,7 @@
     "name": "redis",
     "image": "redis:4.0.11-alpine",
     "cpu": 1,
-    "memory": 512,
+    "memory": 256,
     "essential": true,
     "portMappings": [
       {

@@ -7,8 +7,8 @@ resource "aws_ecs_task_definition" "appTaskDefinition" {
   provider = "aws.aws_provider_eu_west_Ireland"
   container_definitions = "${file("task-definitions/service.json")}"
   family = "appTaskDefinition"
-  task_role_arn = "${aws_iam_role.ec2_instance_role.arn}"
-  execution_role_arn = "${aws_iam_role.ec2_instance_role.arn}"
+//  task_role_arn = "${aws_iam_role.ec2_instance_role.arn}"
+//  execution_role_arn = "${aws_iam_role.ec2_instance_role.arn}"
   network_mode = "bridge"
 }
 
