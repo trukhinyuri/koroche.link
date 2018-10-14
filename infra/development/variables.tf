@@ -12,9 +12,9 @@ variable "domain" {
   description = "The domain name to use for short URLs."
 }
 
-variable "public_ssh_key" {
+variable "vpc_cidr_block" {
   type = "string"
-  description = "SSH key for VM acess"
+  description = "CIDR block for VPC"
 }
 
 //variable "aws_region_main" {
