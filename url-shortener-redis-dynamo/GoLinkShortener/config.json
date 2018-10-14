@@ -1,7 +1,0 @@
-{
-  "port" : "5100",
-  "dynamoRegion" : "eu-west-1",
-  "dynamoTable" : "url_shortener",
-  "dynamoEndpoint": "",
-  "redisEndpoint" : "127.0.0.1:6379"
-}
