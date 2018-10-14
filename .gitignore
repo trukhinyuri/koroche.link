@@ -6,3 +6,4 @@ shortener.tf
 terraform.tfstate
 terraform.tfstate.backup
 .terraform/*
+./infra/base/.terraform/*
