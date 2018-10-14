@@ -1,9 +1,7 @@
 .idea/*
-aws-url-shortener/*
-aws-url-shortener.zip
-lambda_functions/*
+app/GoLinkShortener/GoLinkShortener
 shortener.tf
 terraform.tfstate
 terraform.tfstate.backup
 .terraform/*
-./infra/base/.terraform/*
+infra/base/.terraform/*
